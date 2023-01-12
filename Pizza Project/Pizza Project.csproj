@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,16 +75,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Pizza_Database.mdf" />
+    <Content Include="App_Data\Pizza_Database_log.ldf">
+      <DependentUpon>Pizza_Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Models\Images\540-5401807_chicken-strips-and-crinkle-fries-hd-png-download.png" />
     <Content Include="Models\Images\Cheese Pizza.jpg" />
     <Content Include="Models\Images\creamy-penne-pasta-3.jpg" />
+    <Content Include="Models\Images\fanta_orange_500ml.jpg" />
     <Content Include="Models\Images\pepperoni_cheese_pizza.jpg" />
+    <Content Include="Models\Images\Water Bottle.jpg" />
     <Content Include="Order Screen.aspx" />
+    <Content Include="pizzaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>pizzaModel.Context.cs</LastGenOutput>
+      <DependentUpon>pizzaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="pizzaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pizzaModel.edmx</DependentUpon>
+      <LastGenOutput>pizzaModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerTable.cs">
+      <DependentUpon>pizzaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,10 +121,35 @@
     <Compile Include="Order Screen.aspx.designer.cs">
       <DependentUpon>Order Screen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>pizzaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pizzaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pizzaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pizzaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pizzaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pizzaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pizzaModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EntityDeploy Include="pizzaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>pizzaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="pizzaModel.edmx.diagram">
+      <DependentUpon>pizzaModel.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,7 +158,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

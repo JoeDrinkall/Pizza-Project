@@ -14,7 +14,7 @@ namespace Pizza_Project
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnCheesePizza_Click(object sender, EventArgs e)
         {
 
         }
