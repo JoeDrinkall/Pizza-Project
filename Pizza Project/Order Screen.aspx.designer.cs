@@ -42,22 +42,22 @@ namespace Pizza_Project
         protected global::System.Web.UI.WebControls.Image Image2;
 
         /// <summary>
-        /// btnCheesePizza control.
+        /// btnAddM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheesePizza;
+        protected global::System.Web.UI.WebControls.Button btnAddM;
 
         /// <summary>
-        /// btnPepperoniPizza control.
+        /// btnAddP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPepperoniPizza;
+        protected global::System.Web.UI.WebControls.Button btnAddP;
 
         /// <summary>
         /// Image3 control.
