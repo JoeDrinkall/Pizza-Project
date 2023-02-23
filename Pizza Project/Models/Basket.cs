@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace Pizza_Project.Models
 {
-    internal class Basket
+    //The Basket holds the items being ordered from the order screen
+    public class Basket
     {
         public List<BasketItem> Items {get; set;}
 
@@ -16,6 +15,7 @@ namespace Pizza_Project.Models
             Items = new List<BasketItem>();
         }
 
+        //This returns the total price of all items in the basket
         public decimal GetTotal()
         {
             var total = 0m;
@@ -28,10 +28,41 @@ namespace Pizza_Project.Models
             return total;
         }
 
+        //This will remove an item from the list of items in the basket
         public void RemoveItem(int productId)
         {
             var itemToRemove = Items.First(i => i.ProductId == productId);
             Items.Remove(itemToRemove);
+        }
+
+        //This will add an item to the list of items in the basket        
+        public void AddItem(int productId, string Name, decimal price)
+        {
+            var basketItem = new BasketItem
+            {
+                ProductId = productId,
+                ProductName = Name,
+                ProductPrice = price,
+                Quantity = 1
+            };
+
+            AddItemOrIncreaseQuantity(basketItem);
+        }
+
+        private void AddItemOrIncreaseQuantity(BasketItem newItem)
+        {
+            //First check if this product is already in the basket
+            //If it is then increase the quantity
+            //Otherwise add it to the basket
+            if (Items.Any(i => i.ProductId == newItem.ProductId))
+            {
+                var existingBasketItem = Items.First(i => i.ProductId == newItem.ProductId);
+                existingBasketItem.Quantity++;
+            }
+            else
+            {
+                Items.Add(newItem);
+            }
         }
     }
 }

@@ -77,59 +77,72 @@
     <Content Include="App_Data\Pizza_DB_log.ldf">
       <DependentUpon>Pizza_DB.mdf</DependentUpon>
     </Content>
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Login.aspx" />
-    <Content Include="Models\Images\540-5401807_chicken-strips-and-crinkle-fries-hd-png-download.png" />
-    <Content Include="Models\Images\Cheese-Pizza.jpg" />
-    <Content Include="Models\Images\creamy-penne-pasta-3.jpg" />
-    <Content Include="Models\Images\fanta_orange_500ml.jpg" />
-    <Content Include="Models\Images\pepperoni_cheese_pizza.jpg" />
-    <Content Include="Models\Images\Water Bottle.jpg" />
-    <Content Include="ThankYouForYourOrder.aspx" />
-    <Content Include="ViewBasket.aspx" />
-    <Content Include="OrderScreen.aspx" />
+    <Content Include="Pages\CreateAccount.aspx" />
+    <Content Include="Pages\Login.aspx" />
+    <Content Include="Images\540-5401807_chicken-strips-and-crinkle-fries-hd-png-download.png" />
+    <Content Include="Images\Cheese-Pizza.jpg" />
+    <Content Include="Images\creamy-penne-pasta-3.jpg" />
+    <Content Include="Images\fanta_orange_500ml.jpg" />
+    <Content Include="Images\pepperoni_cheese_pizza.jpg" />
+    <Content Include="Images\water-bottle.jpg" />
+    <Content Include="Pages\StaffScreen.aspx" />
+    <Content Include="Pages\ThankYouForYourOrder.aspx" />
+    <Content Include="Pages\ViewBasket.aspx" />
+    <Content Include="Pages\OrderScreen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="DataAccess\DataAccess.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\OrderStatus.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Basket.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BasketItem.cs" />
-    <Compile Include="ThankYouForYourOrder.aspx.cs">
+    <Compile Include="Pages\StaffScreen.aspx.cs">
+      <DependentUpon>StaffScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StaffScreen.aspx.designer.cs">
+      <DependentUpon>StaffScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ThankYouForYourOrder.aspx.cs">
       <DependentUpon>ThankYouForYourOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ThankYouForYourOrder.aspx.designer.cs">
+    <Compile Include="Pages\ThankYouForYourOrder.aspx.designer.cs">
       <DependentUpon>ThankYouForYourOrder.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewBasket.aspx.cs">
+    <Compile Include="Pages\ViewBasket.aspx.cs">
       <DependentUpon>ViewBasket.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewBasket.aspx.designer.cs">
+    <Compile Include="Pages\ViewBasket.aspx.designer.cs">
       <DependentUpon>ViewBasket.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OrderScreen.aspx.cs">
+    <Compile Include="Pages\OrderScreen.aspx.cs">
       <DependentUpon>OrderScreen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OrderScreen.aspx.designer.cs">
+    <Compile Include="Pages\OrderScreen.aspx.designer.cs">
       <DependentUpon>OrderScreen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
