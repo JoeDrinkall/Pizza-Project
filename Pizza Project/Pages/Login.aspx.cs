@@ -27,7 +27,7 @@ namespace Pizza_Project
             catch (Exception ex)
             {
                 error.Visible = true;
-            }              
+            }
         }
     }
 }

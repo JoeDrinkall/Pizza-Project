@@ -36,12 +36,12 @@ namespace Pizza_Project.Models
         }
 
         //This will add an item to the list of items in the basket        
-        public void AddItem(int productId, string Name, decimal price)
+        public void AddItem(int productId, string name, decimal price)
         {
             var basketItem = new BasketItem
             {
                 ProductId = productId,
-                ProductName = Name,
+                ProductName = name,
                 ProductPrice = price,
                 Quantity = 1
             };

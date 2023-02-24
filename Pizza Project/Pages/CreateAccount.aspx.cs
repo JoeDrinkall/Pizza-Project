@@ -28,7 +28,7 @@ namespace Pizza_Project.Pages
             else
             {
                 dataAccess.CreateUser(username, password);
-                Response.Redirect("OrderScreen.aspx");
+                Response.Redirect("Login.aspx");
             }
 
         }

@@ -9,7 +9,7 @@ namespace Pizza_Project
 {
     public class DataAccess
     {
-        //This will return the details of a user
+        //This will ;return the details of a user
         public User GetUserDetails(string username, string password)
         {
             var connection = GetConnection(); //Get a connection to the database
